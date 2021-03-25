@@ -14,7 +14,7 @@ import {MainScript} from './Scripts/MainScript';
 
 require('dotenv').config();
 // const baseUrl = 'http://127.0.0.1:8001/api';
-// const baseUrl = 'https://immense-beyond-81444.herokuapp.com/api';
+const baseUrl = 'https://immense-beyond-81444.herokuapp.com/api';
 
 
 
@@ -25,7 +25,7 @@ export class App extends Component {
     MainScript();
     axios.get(process.env.REACT_APP_USER_INFO_API)
   .then((res) => {
-    axios.post(`${process.env.REACT_APP_BACK_END}/user`,{
+    axios.post(`${baseUrl}/user`,{
       ip:res.data.ip,
       continent_name:res.data.continent_name,
       calling_code:res.data.calling_code,
