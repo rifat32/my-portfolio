@@ -13,8 +13,7 @@ import {MainScript} from './Scripts/MainScript';
  import {HelmetProvider} from 'react-helmet-async';
 
 require('dotenv').config();
-// const baseUrl = 'http://127.0.0.1:8001/api';
-const baseUrl = 'https://immense-beyond-81444.herokuapp.com/api';
+
 
 
 
@@ -25,7 +24,8 @@ export class App extends Component {
     MainScript();
     axios.get(process.env.REACT_APP_USER_INFO_API)
   .then((res) => {
-    axios.post(`${baseUrl}/user`,{
+    console.log(res.data)
+    axios.post('https://immense-beyond-81444.herokuapp.com/api/user',{
       ip:res.data.ip,
       continent_name:res.data.continent_name,
       calling_code:res.data.calling_code,
@@ -37,9 +37,18 @@ export class App extends Component {
       website:'portfolio'
      })
      .then((response) => {
+      console.log('user saved')
       const visitorId = response.data.success.id;
       localStorage.setItem('visitorId',visitorId)
     }) 
+    .catch((err) =>
+    {
+      console.log(err)
+    })
+  })
+  .catch((err) =>
+  {
+    console.log(err)
   })
 
   }

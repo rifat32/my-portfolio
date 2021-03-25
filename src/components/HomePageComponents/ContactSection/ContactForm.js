@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 require('dotenv').config();
 
- const baseUrl = 'https://immense-beyond-81444.herokuapp.com/api';
 const letters = /^[A-Za-z]+$/;
 const emailRegX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 export class ContactForm extends Component {
@@ -93,18 +92,18 @@ if(target.name === 'email' ){
   //#####################               ######################
   handleSubmit = (event) => {
   event.preventDefault();
-
   this.setState({
      nameErr:'',
      emailErr:'',
-     messageErr:''
+     messageErr:'',
+     loading:true,
+     somethingWrong:false,
+     success:false
   })
   const validationSuccess = this.formValidate();
   if(validationSuccess) {
-this.setState({
-  loading:false
-})
-axios.post(`${baseUrl}/message`,{
+
+axios.post('https://immense-beyond-81444.herokuapp.com/api/message',{
   name:this.state.name,
   email:this.state.email,
   message:this.state.message,
@@ -123,7 +122,7 @@ axios.post(`${baseUrl}/message`,{
     this.setState({
       success:false
     })
-  },5000)
+  },3000)
    
 }) 
  .catch(err => {
@@ -137,6 +136,11 @@ axios.post(`${baseUrl}/message`,{
  })
  
 
+  }
+  else {
+    this.setState({
+      loading:false,
+   })
   }
   
   
