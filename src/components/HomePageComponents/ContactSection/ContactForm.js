@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 require('dotenv').config();
 
-const baseUrl = 'http://127.0.0.1:8001/api';
-// const baseUrl = 'https://immense-beyond-81444.herokuapp.com/api';
 const letters = /^[A-Za-z]+$/;
 const emailRegX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 export class ContactForm extends Component {
@@ -105,7 +103,7 @@ if(target.name === 'email' ){
 this.setState({
   loading:false
 })
-axios.post(`${baseUrl}/message`,{
+axios.post(`${process.env.REACT_APP_BACK_END}/message`,{
   name:this.state.name,
   email:this.state.email,
   message:this.state.message,
