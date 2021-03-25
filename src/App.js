@@ -24,7 +24,6 @@ export class App extends Component {
     MainScript();
     axios.get(process.env.REACT_APP_USER_INFO_API)
   .then((res) => {
-    console.log(res.data)
     axios.post('https://immense-beyond-81444.herokuapp.com/api/user',{
       ip:res.data.ip,
       continent_name:res.data.continent_name,
@@ -37,19 +36,12 @@ export class App extends Component {
       website:'portfolio'
      })
      .then((response) => {
-      console.log('user saved')
       const visitorId = response.data.success.id;
       localStorage.setItem('visitorId',visitorId)
     }) 
-    .catch((err) =>
-    {
-      console.log(err)
-    })
+   
   })
-  .catch((err) =>
-  {
-    console.log(err)
-  })
+  
 
   }
   render() {
