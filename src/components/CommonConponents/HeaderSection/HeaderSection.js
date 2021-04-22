@@ -13,27 +13,15 @@ const {name,image,navLinks, socialLinks,} = HeaderSectionData;
 
 
 export class Header extends Component {
-  state = {
-    navOpen:false
-  }
+ 
 componentDidMount(){
   scrollActiveNav();
 }
-navOpen = () => {
-this.setState({
-  navOpen:true
-})
-document.querySelector('body').classList.add('mobile-nav-active')
-}
-navClose = () => {
-  this.setState({
-    navOpen:false
-  })
-  document.querySelector('body').classList.remove('mobile-nav-active')
-  }
+
+
     render() {
         return ( <>
-    {this.state.navOpen? <BiX className='mobile-nav-toggle d-xl-none' onClick={this.navClose}/> : <MdViewHeadline className='mobile-nav-toggle d-xl-none' onClick={this.navOpen}/>
+    {this.props.navOpen? <BiX className='mobile-nav-toggle d-xl-none' onClick={this.props.navCloseHandle}/> : <MdViewHeadline className='mobile-nav-toggle d-xl-none' onClick={this.props.navOpenHandle}/>
      }    
        
          <header id="header">
@@ -52,11 +40,6 @@ navClose = () => {
     }
      
     
-     
-       
-       
-      
-       
       </div>
     </div>
     {/* ##################### ######### ###################### */}
@@ -65,7 +48,7 @@ navClose = () => {
     <nav id="navbar" className="nav-menu navbar">
       <ul>
         {navLinks.map(el => {
-          return el.visibility && <li key={el.id} onClick={this.navClose}><HashLink to={el.link} className="nav-link scrollto">{el.icon} <span>{el.text}</span></HashLink></li>
+          return el.visibility && <li key={el.id} ><HashLink to={el.link} className="nav-link scrollto">{el.icon} <span>{el.text}</span></HashLink></li>
            
         })
         }

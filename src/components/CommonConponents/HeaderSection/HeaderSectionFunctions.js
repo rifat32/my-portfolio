@@ -18,4 +18,5 @@ const scrollActiveNav = () => {
     onscroll(document, navbarlinksActive)
 }
 
+
 export {scrollActiveNav};

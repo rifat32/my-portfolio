@@ -9,7 +9,7 @@ const SkillsSectionData = {
         {
             id:2,
             skill:'Mysql',
-            value:90
+            value:70
         },
         {
             id:3,
@@ -20,101 +20,80 @@ const SkillsSectionData = {
             id:4,
             skill:'MongoDB',
             value:85
-        }
-        ,
+        },
         {
             id:5,
-            skill:'Node Js',
+            skill:'Mongoose',
             value:85
         },
         {
             id:6,
-            skill:'Javascript',
+            skill:'Node Js',
             value:85
         },
         {
             id:7,
+            skill:'Javascript',
+            value:90
+        },
+        {
+            id:8,
             skill:'PHP',
-            value:85
+            value:70
+        },
+        {
+            id:9,
+            skill:'Python',
+            value:70
         }
-        // {
-        //     id:1,
-        //     skill:'HTML',
-        //     value:85
-        // },
-        // {
-        //     id:2,
-        //     skill:'CSS',
-        //     value:85
-        // },
-        // {
-        //     id:3,
-        //     skill:'JAVASCRIPT',
-        //     value:90
-        // },
-        // {
-        //     id:4,
-        //     skill:'Jquery',
-        //     value:85
-        // }
+    
     ],
     skillsCol2:  [
         {
             id:1,
             skill:'React Js',
-            value:90
+            value:85
         },
         {
             id:2,
+            skill:'React Context',
+            value:100
+        },
+        {
+            id:3,
+            skill:'Redux',
+            value:90
+        },
+        {
+            id:4,
             skill:'React Styled Component',
             value:90
         },
         {
-            id:3,
+            id:5,
             skill:'Bootstrap',
-            value:80
+            value:90
         },
          {
-            id:4,
+            id:6,
                 skill:'Jquery',
-                value:70
+                value:85
          },
          {
-            id:5,
+            id:7,
                 skill:'SASS',
                 value:80
           },
          {
-            id:6,
+            id:8,
                 skill:'CSS',
-                value:80
+                value:85
           },
-
           {
-            id:7,
+            id:9,
                 skill:'HTML',
-                value:80
-          }  
-        // {
-        //     id:1,
-        //     skill:'Bootstrap',
-        //     value:90
-        // },
-        // {
-        //     id:2,
-        //     skill:'React Js',
-        //     value:80
-        // },
-        //  {
-        //     id:3,
-        //         skill:'PHP',
-        //         value:70
-        //  },
-        //  {
-        //     id:4,
-        //         skill:'Laravel',
-        //         value:80
-        //   }
+                value:85
+          } 
         
     ]
 }

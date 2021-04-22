@@ -19,11 +19,6 @@ export default class HomePage extends Component {
         return (
             <main id="main">
             <Helmet>
-            <meta property="og:url"   content="https://masterrifat.netlify.app/"
- />
- <meta property="og:title"              content="RIFAT AL- ASHWAD" />
- <meta property="og:description"              content="I am a man. A React superman. I am a front end web developer as well as a back end web developer. I have the ability to switch to any technology. Always learning and pushing boundaries."/>
- <meta property="og:image"     content="https://masterrifat.netlify.app/assets/img/profile-img.jpg" />
              <meta name="description" content="I am a man. A React superman. I am a front end web developer as well as a back end web developer. I have the ability to switch to any technology. Always learning and pushing boundaries." />
              <meta name="keywords" content="Rifat Al- ASHWAD, Web Developer, Master,  Web Master, React Superman, JS programmer, Programmer, Javascript programmer, Front-End Web Developer, Back-End Web Developer, Web Designer, Portfolio, Real Web Developer" />
            </Helmet>    
