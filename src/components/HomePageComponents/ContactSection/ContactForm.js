@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 require('dotenv').config();
 
-const letters = /^[A-Za-z]+$/;
+const letters =/^[a-zA-Z\s]*$/;
 const emailRegX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 export class ContactForm extends Component {
   state = {
@@ -28,7 +28,7 @@ somethingWrong:false
       if(lettersErr || lengthErr){
         if(lettersErr)
         {
-        
+     
           this.setState({
             nameErr: 'Only alphabet characters are allowed'
            })
